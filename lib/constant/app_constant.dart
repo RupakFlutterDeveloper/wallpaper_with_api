@@ -1,16 +1,38 @@
 import 'dart:ui';
+import 'dart:ui_web';
 
 class AppConstant {
   static final String pixcal_Api_Key =
       "A3zefiToYnDlqyqSVUPC5pv5ESmRhPQfLNdVXUzBtF65eMtgSJ2fQSWQ";
-  static final List<Color> mColor = [
-    Color(0xfffdb7b9),
-    Color(0xff4264e0),
-    Color(0xff6141e1),
-    Color(0xff68bfc1),
-    Color(0xff292929),
-    Color(0xffff9b0b),
-    Color(0xffb646ea),
+  static final List<Map<String, dynamic>> mColor = [
+    {
+      "color": Color(0xfffdb7b9),
+      "code": "fdb7b9",
+    },
+    {
+      "color": Color(0xff4264e0),
+      "code": "4264e0",
+    },
+    {
+      "color": Color(0xff6141e1),
+      "code": "6141e1",
+    },
+    {
+      "color": Color(0xff68bfc1),
+      "code": "68bfc1",
+    },
+    {
+      "color": Color(0xff292929),
+      "code": "292929",
+    },
+    {
+      "color": Color(0xffff9b0b),
+      "code": "ff9b0b",
+    },
+    {
+      "color": Color(0xffb646ea),
+      "code": "b646ea",
+    },
   ];
 
   static final List<Map<String, dynamic>> mCategory = [

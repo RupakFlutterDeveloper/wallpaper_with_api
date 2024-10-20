@@ -17,9 +17,8 @@ class SearchWallPage extends StatefulWidget {
 class _SearchWallPageState extends State<SearchWallPage> {
   @override
   void initState() {
-    BlocProvider.of<SearchCubit>(context).getSearchWallpaper(
-      query: widget.query,
-    );
+    BlocProvider.of<SearchCubit>(context)
+        .getSearchWallpaper(query: widget.query, color: widget.mColor);
   }
 
   @override

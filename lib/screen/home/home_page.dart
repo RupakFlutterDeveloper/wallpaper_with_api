@@ -146,7 +146,26 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.only(
                       left: 11,
                       right: index == AppConstant.mColor.length - 1 ? 11 : 0),
-                  child: getColorToneWidget(AppConstant.mColor[index]),
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BlocProvider(
+                                create: (context) => SearchCubit(
+                                    wallpaperRepo:
+                                        WallpaperRepo(apiHelper: ApiHelper())),
+                                child: SearchWallPage(
+                                    mColor: searchController.text.isNotEmpty
+                                        ? searchController.text
+                                        : "Nature",
+                                    query: AppConstant.mCategory[index]
+                                        ['title']),
+                              ),
+                            ));
+                      },
+                      child: getColorToneWidget(
+                          AppConstant.mColor[index]['color'])),
                 );
               },
             ),
