@@ -17,10 +17,10 @@ class WallpaperRepo {
 
 //8144919185
   Future<dynamic> getSearchWallpaper(
-      {required String mQuery, String mcolor = ""}) async {
+      {required String mQuery, String mcolor = "", int mpage = 1}) async {
     try {
-      var searchwall = await apiHelper
-          .getApi("${AppUrls.SEARCH_WALL_URLS}$mQuery&color=${mcolor}");
+      var searchwall = await apiHelper.getApi(
+          "${AppUrls.SEARCH_WALL_URLS}$mQuery&color=${mcolor}&page=$mpage");
       return searchwall;
     } catch (e) {
       rethrow;

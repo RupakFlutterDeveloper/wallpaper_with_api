@@ -4,6 +4,7 @@ import 'package:wallpaperapi_with/app_widget/wallpaper_bg_widget.dart';
 import 'package:wallpaperapi_with/constant/app_constant.dart';
 import 'package:wallpaperapi_with/data/remote/api_helper.dart';
 import 'package:wallpaperapi_with/data/remote/repositary/wallpaper_repo.dart';
+import 'package:wallpaperapi_with/screen/details_wall_page.dart';
 import 'package:wallpaperapi_with/screen/home/cubit/home_cubit.dart';
 import 'package:wallpaperapi_with/screen/home/cubit/home_state.dart';
 import 'package:wallpaperapi_with/screen/search/cubit/search_cubit.dart';
@@ -117,8 +118,29 @@ class _HomePageState extends State<HomePage> {
                               right: index == state.listphoto!.length - 1
                                   ? 11
                                   : 0),
-                          child: WallpaperBgWidget(
-                              imgUrl: eachlist.src!.portrait!),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DetailsWallPage(
+                                      imgModel: eachlist.src!,
+                                    ),
+                                  ));
+                            },
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DetailsWallPage(
+                                          imgModel: eachlist.src!),
+                                    ));
+                              },
+                              child: WallpaperBgWidget(
+                                  imgUrl: eachlist.src!.portrait!),
+                            ),
+                          ),
                         );
                       },
                     );
