@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'dart:ui_web';
 
 class AppConstant {
   static final String pixcal_Api_Key =
